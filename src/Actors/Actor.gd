@@ -1,8 +1,12 @@
 extends KinematicBody2D
 class_name Actor 
 
+export var speed: = Vector2(300.0, 1000.0)
+export var gravity: = 3000.0 
+
+var velocity: = Vector2.ZERO
+
 func _physics_process(delta: float) -> void:
-	# move 300 pixels per second on the x axis
-	var velocity: = Vector2(300, 0)
-	move_and_slide(velocity)
+	velocity.y += gravity * delta
+	velocity = move_and_slide(velocity)
 	
