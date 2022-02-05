@@ -1,6 +1,7 @@
 extends "res://src/Actors/Actor.gd"
 
 func _ready() -> void: 
+	set_physics_process(false)
 	velocity.x = -speed.x 
 	
 func _physics_process(delta: float) -> void:
